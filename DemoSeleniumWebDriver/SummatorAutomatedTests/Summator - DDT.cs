@@ -19,10 +19,10 @@ namespace SummatorAutomatedTests
         [OneTimeSetUp]
         public void OpenBrowser()
         {
-            //var chromeOptions = new ChromeOptions();
-            //chromeOptions.AddArgument("--headless"); // Run Chrome in headless mode
-            //chromeOptions.AddArgument("--disable-gpu"); // Disable GPU acceleration
-            this.driver = new ChromeDriver(); //chromeOptions
+            var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArgument("--headless"); // Run Chrome in headless mode
+            chromeOptions.AddArgument("--disable-gpu"); // Disable GPU acceleration
+            this.driver = new ChromeDriver(chromeOptions); //chromeOptions
             this.driver.Manage().Window.Size = new System.Drawing.Size(1920, 1080);
             this.driver.Navigate().GoToUrl(url);           
             //this.driver.Manage().Window.Maximize();
