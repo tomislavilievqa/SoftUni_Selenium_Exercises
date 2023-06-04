@@ -31,9 +31,10 @@ namespace StudentRegistryApp_Selenium_POM.Pages
             this.AddButton.Click();
         }
 
-        public void GetErrorMessage(string message)
+        public string GetErrorMessage()
         {
-
+            AddButton.Click();
+            return ErrorMessage.Text;
         }
 
         public bool IsFieldsAreEmpty(params By[] fieldLocators)

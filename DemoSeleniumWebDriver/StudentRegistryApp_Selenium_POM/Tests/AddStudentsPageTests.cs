@@ -1,3 +1,4 @@
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using StudentRegistryApp_Selenium_POM.Pages;
@@ -8,8 +9,10 @@ namespace StudentRegistryApp_Selenium_POM.Tests
     {
 
         public AddStudentsPage page;
+        public Homepage homepage;
+        public ViewStudentsPage viewStudentsPage;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
             this.driver = new ChromeDriver();        
@@ -25,29 +28,55 @@ namespace StudentRegistryApp_Selenium_POM.Tests
             driver.Quit();
         }
 
-        //[Test]
-        //public void IsFieldsAreEmpty_SomeFieldsEmpty_ReturnsTrue()
-        //{
-        //    // Navigate to the test page
 
-        //    // Perform actions to fill or leave fields empty
+        [Test]
+        public void Test_TestAddStudentPage_Content()
+        {
 
-        //    bool isEmpty = obj.IsFieldsAreEmpty(By.Id("field1"), By.Name("field2"), By.CssSelector(".field3"));
+            Assert.IsTrue(page.IsOpen());
+            Assert.AreEqual("Register New Student", page.GetPageHeadingText());
+            Assert.AreEqual("Add Student", page.GetPageTitle());
 
-        //    Assert.IsTrue(isEmpty, "Some fields are empty.");
-        //}
+            Assert.AreEqual("Name:", page.FieldStudentName.Text);
+            Assert.AreEqual("Email:", page.FieldStudentEmail.Text);
 
-        //[Test]
-        //public void IsFieldsAreEmpty_AllFieldsFilled_ReturnsFalse()
-        //{
-        //    // Navigate to the test page
-        //    driver.Url = "https://www.example.com/test-page";
+            Assert.That(page.AddButton.Text, Is.EqualTo("Add"));
 
-        //    // Perform actions to fill all fields
+            var errorMessage = page.GetErrorMessage();
+            Assert.That(errorMessage, Is.EqualTo("Cannot add student. Name and email fields are required!"));
 
-        //    bool isEmpty = obj.IsFieldsAreEmpty(By.Id("field1"), By.Name("field2"), By.CssSelector(".field3"));
+        }
 
-        //    Assert.IsFalse(isEmpty, "No fields are empty.");
-        //}
+        [Test]
+        public void Test_TestAddStudentPage_Links()
+        {
+            page.LinkViewStudentsPage.Click();
+            this.viewStudentsPage = new ViewStudentsPage(driver);
+            Assert.IsTrue(viewStudentsPage.IsOpen());
+
+            driver.Navigate().Back();
+
+            page.LinkHomePage.Click();
+            this.homepage = new Homepage(driver);
+            Assert.IsTrue(homepage.IsOpen());
+
+            driver.Navigate().Back();
+
+        }
+
+        [TestCase("test", "test@gmail.com")]
+        [Test]
+        public void Test_TestAddStudentPage_AddInvalidInput(string name, string email)
+        {
+
+
+        }
+
+
+        [Test]
+        public void Test_TestAddStudentPage_AddValidInputs()
+        {
+
+        }
     }
 }

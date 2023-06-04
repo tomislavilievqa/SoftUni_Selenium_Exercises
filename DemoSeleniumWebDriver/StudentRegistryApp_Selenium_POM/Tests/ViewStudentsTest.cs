@@ -52,22 +52,18 @@ namespace StudentRegistryApp_Selenium_POM.Tests
         [Test]
         public void Test_ViewStudentsPage_Links()
         {
-
             
             page.LinkHomePage.Click();
             this.homepage = new Homepage(driver);
             Assert.IsTrue(homepage.IsOpen());
 
-            page.LinkViewStudentsPage.Click();
-            Assert.IsTrue(page.IsOpen());
+            driver.Navigate().Back();
 
             page.LinkAddStudentsPage.Click();
             this.addStudentsPage = new AddStudentsPage(driver);
             Assert.IsTrue(addStudentsPage.IsOpen());
 
-            page.LinkViewStudentsPage.Click();
-            Assert.IsTrue(page.IsOpen());
-
+            driver.Navigate().Back();
 
         }
     }

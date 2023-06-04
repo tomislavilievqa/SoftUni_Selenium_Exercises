@@ -53,7 +53,7 @@ namespace StudentRegistryApp_Selenium_POM.Tests
             var studentsCount = studentsPage.GetRegisteredStudents().Length.ToString();
 
             Assert.That(expectedResult,Is.EqualTo(studentsCount));
-      
+       
         }
 
         [Test]
@@ -64,15 +64,13 @@ namespace StudentRegistryApp_Selenium_POM.Tests
             this.studentsPage = new ViewStudentsPage(driver);   
             Assert.IsTrue(studentsPage.IsOpen());
 
-            studentsPage.LinkHomePage.Click();
-            Assert.IsTrue(page.IsOpen());
+            driver.Navigate().Back();
 
             page.LinkAddStudentsPage.Click();
             this.addStudentsPage = new AddStudentsPage(driver);
             Assert.IsTrue(addStudentsPage.IsOpen());
 
-            addStudentsPage.LinkHomePage.Click();
-            Assert.IsTrue(page.IsOpen());
+            driver.Navigate().Back();
 
 
         }
