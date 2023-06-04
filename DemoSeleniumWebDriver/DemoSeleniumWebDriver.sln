@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SummatorAutomatedTests", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumWaits_Exercises", "SeleniumWaits_Exercises\SeleniumWaits_Exercises.csproj", "{5A82425E-79AC-4FF5-8732-B1B1F9648D4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsForURLShortener", "TestsForURLShortener\TestsForURLShortener.csproj", "{0905C4A8-EEB1-4F39-A365-99E2E7FC93E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestsForURLShortener", "TestsForURLShortener\TestsForURLShortener.csproj", "{0905C4A8-EEB1-4F39-A365-99E2E7FC93E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentRegistryApp_Selenium_POM", "StudentRegistryApp_Selenium_POM\StudentRegistryApp_Selenium_POM.csproj", "{DE2E21A8-280B-48A2-8399-7D746F5C9D56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0905C4A8-EEB1-4F39-A365-99E2E7FC93E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0905C4A8-EEB1-4F39-A365-99E2E7FC93E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0905C4A8-EEB1-4F39-A365-99E2E7FC93E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE2E21A8-280B-48A2-8399-7D746F5C9D56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE2E21A8-280B-48A2-8399-7D746F5C9D56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE2E21A8-280B-48A2-8399-7D746F5C9D56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE2E21A8-280B-48A2-8399-7D746F5C9D56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
