@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium;
 
 namespace StudentRegistryApp_Selenium_POM.Pages
 {
-    internal class Class1
+    public class Homepage : BasePage
     {
+        private readonly IWebDriver driver;
+
+        public Homepage(IWebDriver driver) : base(driver)
+        {
+            this.driver = driver;
+        }
+
+        public override string pageUrl => "https://studentregistry.softuniqa.repl.co/";
+
+
+
     }
 }
